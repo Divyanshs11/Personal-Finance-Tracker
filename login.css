@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('money-8692175.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.container {
+    width: 400px;
+    padding: 20px;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(97, 170, 164, 0.845);
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+input, button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #218838;
+}
+.google-sign-in {
+    background-color: #4285F4;
+}
+.google-sign-in:hover {
+    background-color: #357AE8;
+}
+p {
+    text-align: center;
+}
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+#sign-up-form {
+    display: none;
+}

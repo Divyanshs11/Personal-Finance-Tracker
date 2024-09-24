@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1>Personal Finance Tracker</h1>
+            <div class="user-menu">
+                <img src="user-solid-24.png" alt="User Icon" class="user-icon">
+                <div class="dropdown">
+                    <button class="dropdown-toggle">User</button>
+                    <div class="dropdown-content">
+                        <a href="#" id="sign-out">Sign Out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="savings-input">
+            <h2>Income Input</h2>
+            <input type="number" id="income" placeholder="Enter your income">
+            <button id="save-income">Save Income</button>
+            <h3>Total Savings: ₹<span id="savings-amount">0.00</span></h3>
+        </div>
+        <form id="expense-form">
+            <h2>Add Expense</h2>
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Amount" required>
+            <select id="expense-category">
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" id="expense-date" required>
+            <button type="submit">Add Expense</button>
+        </form>
+        <div class="total-amount">
+            <h2>Total Expenses: ₹<span id="total-amount">0.00</span></h2>
+        </div>
+        <h2>Expenses List</h2>
+        <table class="expense-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="expense-list"></tbody>
+        </table>
+        <div id="savings-goal-section">
+            <h2>Savings Goal</h2>
+            <form id="savings-goal-form">
+                <input type="text" id="goal-item" placeholder="Goal Item" required>
+                <input type="number" id="goal-amount" placeholder="Goal Amount" required>
+                <input type="date" id="goal-start-date" required>
+                <input type="date" id="goal-end-date" required>
+                <button type="submit">Set Goal</button>
+                <button type="button" id="delete-goal">Delete Goal</button>
+            </form>
+            <h3>Goal Item: <span id="goal-item-name">None</span></h3>
+            <h3>Amount Left: ₹<span id="goal-amount-left">0.00</span></h3>
+            <h3>Time Left: <span id="time-left">0 days</span></h3>
+            <button id="extend-goal">Extend Deadline by 30 Days</button>
+            <button id="reduce-goal">Reduce Deadline by 30 Days</button>
+        </div>
+        <div class="filter-chart-wrapper">
+            <h2>Expense Analysis</h2>
+            <select id="chart-period">
+                <option value="all">All Time</option>
+                <option value="7days">Last 7 Days</option>
+                <option value="30days">Last 30 Days</option>
+            </select>
+            <div id="chart-container">
+                <canvas id="expenseChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
